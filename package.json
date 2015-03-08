@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "A wrapper for the RIDB API from the US Dept of Agriculture.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mheadd/node-ridb"
+  },
   "dependencies": {
     "request": "latest",
     "querystring": "latest"

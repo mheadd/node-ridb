@@ -1,6 +1,6 @@
-# Wrapper for the Recreation Information Database (RIDB) API.
+# RIDB
 
-Documentation for the RIDB API can be found [here](http://usda.github.io/RIDB/).
+Wrapper for the Department of Agriculture's Recreation Information Database (RIDB) API. Documentation for the RIDB API can be found [here](http://usda.github.io/RIDB/).
 
 ## Installation
 
