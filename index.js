@@ -12,8 +12,8 @@ var links = require('./lib/links');
 var client = require('./lib/api-client');
 
 module.exports = {
-    setup: function(key) {
-        client.setup(key);
+    init: function(key) {
+        client.init(key);
     },
     organizations: organizations,
     recareas: recareas,
