@@ -10,13 +10,12 @@ Documentation for the RIDB API can be found [here](http://usda.github.io/RIDB/).
 
 Obtain an API key [here](https://ridb.recreation.gov/?action=register).
 
+Get a list of organizations with the word 'Department' in the title.
+
 ```javascript
 var ridb = require('ridb');
 
-// Set up API client with your API key.
 ridb.init('your-api-key');
-
-// Get a list of organizations with the word 'Department' in the title.
 ridb.organizations.getAll({query: 'Department', limit: 2}, function(error, response) {
 	console.log(JSON.stringify(response));
 });
@@ -64,14 +63,12 @@ ridb.organizations.getAll({query: 'Department', limit: 2}, function(error, respo
 
 ```
 
+Get details for a campsites for a specific facility with 'Sunny' in the title and that are accessible.
+
 ```javascript
 var ridb = require('ridb');
 
-// Set up API client with your API key.
 ridb.init('your-api-key');
-
-// Get details for a campsites for a specific facility with 'Sunny' in 
-//  the title and that are accessible.
 var options = {loop: 'SUNNY', CampsiteAccessible: true, limit: 1};
 ridb.campsites.getAllForFacility(234150, options, function(error, response) {
 	console.log(JSON.stringify(response));
