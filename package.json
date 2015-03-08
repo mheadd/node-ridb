@@ -1,0 +1,12 @@
+{
+  "name": "ridb",
+  "version": "0.0.1",
+  "description": "A wrapper for the RIDB API from the US Dept of Agriculture.",
+  "main": "index.js",
+  "dependencies": {
+    "request": "latest",
+    "querystring": "latest"
+  },
+  "author": "Mark Headd <mheadd@gmail.com> (http://civic.io/)",
+  "license": "BSD"
+}
