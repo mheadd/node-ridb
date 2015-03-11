@@ -10,6 +10,65 @@ Wrapper for the Department of Agriculture's Recreation Information Database (RID
 
 Obtain an API key [here](https://ridb.recreation.gov/?action=register).
 
+Get all facilities within 100 miles of Syracuse, NY that allow camping.
+
+```javascript
+ridb.init('your-api-key');
+ridb.facilities.getAll({latitude: 43.0469, longitude: -76.1444, radius: 100, activity: '9,109'}, function(error, response){
+        console.log(JSON.stringify(response));
+});
+```
+
+```json
+{
+  "METADATA": {
+    "RESULTS": {
+      "CURRENT_COUNT": 1,
+      "TOTAL_COUNT": 6
+    },
+    "SEARCH_PARAMETERS": {
+      "LATITUDE": 43.0469,
+      "RADIUS": 100,
+      "LONGITUDE": -76.1444,
+      "LIMIT": 1,
+      "OFFSET": 0,
+      "ACTIVITY": "9,109",
+      "QUERY": ""
+    }
+  },
+  "RECDATA": [
+    {
+      "FacilityID": 233523,
+      "OrgFacilityID": "AN373226",
+      "LegacyFacilityID": 73226,
+      "FacilityReservationURL": "",
+      "FacilityMapURL": "",
+      "FacilityPhone": "570-835-5281",
+      "FacilityTypeDescription": "Camping",
+      "FacilityLatitude": 41.886944444444445,
+      "FacilityDescription": "<h2>Overview</h2>Ives Run Campground sits on the eastern shore of Hammond Lake in north-central Pennsylvania. <br /><br />Surrounded by lush forested ridges, the lake offers recreation for the entire family, including picnicking, swimming, boating, fishing, hiking, hunting and wildlife watching. <br /><br />Ives Run, with its beach and grassy sunning area, is a great place for kids of any age. The facility has campsites as well as group picnic shelters that can be reserved for family reunions, company picnics, neighborhood gatherings and other group events. <h4>Natural Features:</h4>The partially forested campground sits in the pristine setting of the Endless Mountains region of Pennsylvania, along the Allegheny Plateau in the Appalachian Mountains. The Tioga-Hammond Lakes Project consists of two separate dams and reservoirs. The surrounding land paints a scenic picture of rolling mountains and open fields. <h4>Recreation:</h4>Tioga-Hammond Lakes offer a variety of outdoor activities. With a boat ramp and overnight mooring, campers can easily spend time on the water. <br /><br />Anglers seek out record crappie, giant musky, striped, largemouth and smallmouth bass, walleye and channel catfish. <br /><br />The fields and forests around the lakes are popular destinations for both local and out-of-state hunters looking for large and small game species native to the eastern hardwood forests.<br /><br />Four hiking trails, each offering something different, can be accessed from this facility. Near the visitor center, archers use the mile-long Archery Trail, which has targets and tree stands.<h4>Facilities:</h4>Ives Run is a large facility, with nearly 200 reservable campsites, as well as five reservable group picnic shelters available for day use. <br /><br />Other amenities include hot showers, playgrounds, boat ramp, rental mooring slips and a dump station. A swimming area with a grass beach and concrete bottom is also provided. Various sport fields and a volleyball court are close by.<br /><br />Additional fees may be charged for some amenities.",
+      "FacilityLongitude": -77.17916666666667,
+      "FacilityEmail": "",
+      "FacilityDirections": "The campground is located 4 miles south of Tioga and 12 miles north of Wellsboro, Pennsylvania, on State Route 287, within the Ives Run Recreation Area.",
+      "FacilityName": "IVES RUN",
+      "Keywords": "",
+      "FacilityUseFeeDescription": "",
+      "StayLimit": "",
+      "GEOJSON": {
+        "TYPE": "Point",
+        "COORDINATES": [
+          -77.17916666666667,
+          41.886944444444445
+        ]
+      },
+      "LastUpdatedDate": "2015-03-05",
+      "FacilityAdaAccess": ""
+    }
+  ]
+}
+
+```
+
 Get a list of organizations with the word 'Department' in the title.
 
 ```javascript

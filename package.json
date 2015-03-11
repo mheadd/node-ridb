@@ -1,6 +1,6 @@
 {
   "name": "ridb",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "description": "A wrapper for the RIDB API from the US Dept of Agriculture.",
   "main": "index.js",
   "repository": {

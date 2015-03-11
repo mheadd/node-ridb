@@ -1,3 +1,7 @@
+// Include REST client
+var client = require('./lib/api-client');
+
+// Include moduels for RIDB API
 var organizations = require('./lib/organizations');
 var recareas = require('./lib/recareas');
 var facilities = require('./lib/facilities');
@@ -8,8 +12,6 @@ var activities = require('./lib/activities');
 var events = require('./lib/events');
 var media = require('./lib/media');
 var links = require('./lib/links');
-
-var client = require('./lib/api-client');
 
 module.exports = {
     init: function(key) {
