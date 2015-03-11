@@ -13,6 +13,8 @@ Obtain an API key [here](https://ridb.recreation.gov/?action=register).
 Get all facilities within 100 miles of Syracuse, NY that allow camping.
 
 ```javascript
+var ridb = require('ridb');
+
 ridb.init('your-api-key');
 ridb.facilities.getAll({latitude: 43.0469, longitude: -76.1444, radius: 100, activity: '9,109'}, function(error, response){
         console.log(JSON.stringify(response));
