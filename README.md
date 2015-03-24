@@ -79,9 +79,6 @@ ridb.facilities.details(null, {latitude: 43.0469, longitude: -76.1444, radius: 1
 Get a list of organizations with the word 'Department' in the title.
 
 ```javascript
-var ridb = require('ridb');
-
-ridb.init('your-api-key');
 ridb.organizations.details(null, {query: 'Department', limit: 2}, function(error, response) {
   if(!error) {
     console.log(JSON.stringify(response));
@@ -134,9 +131,6 @@ ridb.organizations.details(null, {query: 'Department', limit: 2}, function(error
 Get details for a campsites for a specific facility with 'Sunny' in the title and that are accessible.
 
 ```javascript
-var ridb = require('ridb');
-
-ridb.init('your-api-key');
 var options = {loop: 'SUNNY', CampsiteAccessible: true, limit: 1};
 ridb.campsites.getAllForFacility(234150, options, function(error, response) {
 	console.log(JSON.stringify(response));
