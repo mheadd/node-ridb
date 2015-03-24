@@ -1,7 +1,33 @@
 var ridb = require('./index');
 
-// Initialize ridb client and get all facilities within 100 miles of Syracuse, NY that allow camping.
-ridb.init('your-api-key');
-ridb.facilities.getAll({latitude: 43.0469, longitude: -76.1444, radius: 100, activity: '9,109', limit: 1}, function(error, response){
-        console.log(JSON.stringify(response));
+// Initialize RIDB client.
+var key = process.argv[2];
+ridb.init(key);
+
+// Get a list of facilities.
+ridb.facilities.details(null, {limit: 3}, function(error, response) {
+	if(!error) {
+		console.log(JSON.stringify(response));
+	}
+});
+
+// // Get the details of a specific facility.
+ridb.facilities.details(234150, {}, function(error, response) {
+	if(!error) {
+		console.log(JSON.stringify(response));
+	}
+});
+
+// // Get address details for a specific facility
+ridb.facilities.addresses(234150, null, {}, function(error, response) {
+	if(!error) {
+		console.log(JSON.stringify(response));
+	}
+});
+
+// Get a list of activities for a specific facility.
+ridb.facilities.activities(234150, null, {}, function(error, response) {
+	if(!error) {
+		console.log(JSON.stringify(response));
+	}
 });
