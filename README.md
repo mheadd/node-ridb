@@ -16,8 +16,10 @@ Get all facilities within 100 miles of Syracuse, NY that allow camping.
 var ridb = require('ridb');
 
 ridb.init('your-api-key');
-ridb.facilities.getAll({latitude: 43.0469, longitude: -76.1444, radius: 100, activity: '9,109'}, function(error, response){
-        console.log(JSON.stringify(response));
+ridb.facilities.details(null, {latitude: 43.0469, longitude: -76.1444, radius: 100, activity: '9,109'}, function(error, response) {
+  if(!error) {
+    console.log(JSON.stringify(response));
+  }
 });
 ```
 
@@ -77,8 +79,10 @@ Get a list of organizations with the word 'Department' in the title.
 var ridb = require('ridb');
 
 ridb.init('your-api-key');
-ridb.organizations.getAll({query: 'Department', limit: 2}, function(error, response) {
-	console.log(JSON.stringify(response));
+ridb.organizations.details(null, {query: 'Department', limit: 2}, function(error, response) {
+  if(!error) {
+    console.log(JSON.stringify(response));
+  }
 });
 ```
 ```json
