@@ -133,7 +133,9 @@ Get details for a campsites for a specific facility with 'Sunny' in the title an
 ```javascript
 var options = {loop: 'SUNNY', CampsiteAccessible: true, limit: 1};
 ridb.campsites.getAllForFacility(234150, options, function(error, response) {
-	console.log(JSON.stringify(response));
+  if(!error) {
+    console.log(JSON.stringify(response)); 
+  }
 });
 ```
 
