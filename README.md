@@ -8,14 +8,17 @@ Wrapper for the Department of Agriculture's Recreation Information Database (RID
 
 ## Usage
 
-Obtain an API key [here](https://ridb.recreation.gov/?action=register).
+Obtain an API key [here](https://ridb.recreation.gov/?action=register). When you have a key, initialize an ridb client like this:
+
+<code>ridb.init('your-api-key');</code>
+
+## Examples
+
+Note - additional examples can be found on the [wiki](https://github.com/mheadd/node-ridb/wiki).
 
 Get all facilities within 100 miles of Syracuse, NY that allow camping.
 
 ```javascript
-var ridb = require('ridb');
-
-ridb.init('your-api-key');
 ridb.facilities.details(null, {latitude: 43.0469, longitude: -76.1444, radius: 100, activity: '9,109'}, function(error, response) {
   if(!error) {
     console.log(JSON.stringify(response));
